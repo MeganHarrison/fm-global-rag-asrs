@@ -1,5 +1,6 @@
 anthropic
 beautifulsoup4
+fastapi
 langchain
 langchain-community
 langchain-core
@@ -9,8 +10,12 @@ pandas
 pgvector
 psycopg2-binary
 pydantic
+pydantic-ai
+pydantic-settings
 python-dotenv
+rich
 requests
 sqlalchemy
 tiktoken
 openai
+uvicorn[standard]
