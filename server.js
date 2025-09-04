@@ -23,11 +23,18 @@ app.post('/chat', async (req, res) => {
       return res.status(400).json({ error: 'Message is required' });
     }
 
-    // Import the chat handler
-    const { handleChat } = require('./chat-handler-mvp.js');
+    // Import the chat handler  
+    const { SimpleFMGlobalAgent } = require('./chat-handler-mvp.js');
+    
+    // Initialize agent with environment variables
+    const agent = new SimpleFMGlobalAgent(
+      process.env.SUPABASE_URL,
+      process.env.SUPABASE_SERVICE_KEY,
+      process.env.OPENAI_API_KEY
+    );
     
     // Process the chat
-    const response = await handleChat(message, context);
+    const response = await agent.handleChatMessage(message);
     
     res.json(response);
   } catch (error) {
