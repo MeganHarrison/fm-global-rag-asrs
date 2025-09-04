@@ -1,0 +1,41 @@
+name = "fm-global-rag-agent"
+main = "worker.ts"
+compatibility_date = "2024-01-01"
+
+# KV Namespace for caching
+[[kv_namespaces]]
+binding = "CACHE"
+id = "your-kv-namespace-id"
+
+# D1 Database
+[[d1_databases]]
+binding = "DB"
+database_name = "fm-global-rag"
+database_id = "your-d1-database-id"
+
+# AI bindings for embeddings
+[ai]
+binding = "AI"
+
+# Environment variables (set via dashboard or wrangler secret)
+[vars]
+# OPENAI_API_KEY should be set as a secret:
+# wrangler secret put OPENAI_API_KEY
+
+# Vectorize binding (when available in your account)
+# [[vectorize]]
+# binding = "VECTOR_INDEX"
+# index_name = "fm-global-embeddings"
+
+[build]
+command = "npm install && npm run build"
+
+[build.upload]
+format = "modules"
+dir = "dist"
+main = "./worker.js"
+
+[[rules]]
+type = "Text"
+globs = ["**/*.txt", "**/*.md"]
+fallthrough = true
