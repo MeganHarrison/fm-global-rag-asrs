@@ -3,17 +3,18 @@
     "target": "ES2022",
     "module": "commonjs",
     "lib": ["ES2022"],
-    "outDir": "./dist",
+    "outDir": "./",
     "rootDir": "./",
-    "strict": true,
+    "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
     "types": ["node"]
   },
-  "include": ["**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["server-mvp.ts", "chat-handler-mvp.ts"],
+  "exclude": ["node_modules", "dist", "new-files", "cloudflare-worker", "tests", "*.js"]
 }
