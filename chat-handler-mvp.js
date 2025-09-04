@@ -11,8 +11,6 @@ const openai_1 = __importDefault(require("openai"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 class SimpleFMGlobalAgent {
-    supabase;
-    openai;
     constructor(supabaseUrl, supabaseKey, openaiKey) {
         this.supabase = (0, supabase_js_1.createClient)(supabaseUrl, supabaseKey);
         this.openai = new openai_1.default({ apiKey: openaiKey });

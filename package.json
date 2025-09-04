@@ -2,24 +2,28 @@
   "name": "fm-global-rag-agent",
   "version": "1.0.0",
   "description": "FM Global 8-34 ASRS RAG Chat Agent",
-  "main": "api/index.ts",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "test": "node test-mvp.js"
+    "build": "echo 'No build required - using pre-compiled JavaScript'",
+    "test": "node test-deployment.js",
+    "test:endpoint": "node test-endpoint.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
-    "openai": "^4.28.0",
-    "express": "^4.18.2",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "openai": "^4.28.0"
   },
   "devDependencies": {
-    "tsx": "^4.7.0",
-    "typescript": "^5.3.3",
-    "@types/express": "^4.17.21",
     "@types/cors": "^2.8.17",
-    "@types/node": "^20.11.0"
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.0",
+    "typescript": "^5.9.2"
   }
 }

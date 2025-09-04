@@ -73,3 +73,26 @@ instance/
 
 # Documents (temporarily excluded if they contain sensitive data)
 # documents/
+
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+
+# TypeScript
+*.ts
+!chat-handler-mvp.ts
+*.tsbuildinfo
+
+# Test files
+test-*.js
+test-*.ts
+
+# Build artifacts
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.temp
